@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import { fetchMissions as mockFetchMissions } from './api/fetchMissions';
 import App from './App';
 
@@ -9,5 +9,10 @@ console.log(mockFetchMissions);
 test("App fetches missions data and render data", () => {
   mockFetchMissions.mockResolvedValueOnce({ data: [{ mission_id: "one", mission_name: "one name" }] });
 
-  render(<App />)
+  const { getByText } = render(<App />)
+
+  const button = getByText(/get data/i);
+  fireEvent.click(button);
+
+  getByText(/we are fetching data/i);
 })
