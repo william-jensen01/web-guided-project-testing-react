@@ -31,5 +31,5 @@ test("MissionsList shows data when rerendered with new submission data", () => {
   const error = "my dumb error";
   rerender(<MissionsList error={error} />);
 
-  expect(getByText(/error/i)).toBeDefined();
+  expect(getByText(/my dumb error/i)).toBeDefined();
 });
