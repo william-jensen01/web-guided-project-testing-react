@@ -14,7 +14,7 @@ const missionsFixture = [
 ];
 
 test("MissionsList render", () => {
-  expect(render(<MissionsList missions={[]} error="" />)).not.toThrow();
+  expect(() => render(<MissionsList missions={[]} error="" />)).not.toThrow();
 });
 
 test("MissionsList shows data when rerendered with new submission data", () => {
@@ -31,5 +31,5 @@ test("MissionsList shows data when rerendered with new submission data", () => {
   const error = "my dumb error";
   rerender(<MissionsList error={error} />);
 
-  expect(getByText(error)).toBeDefined();
+  expect(getByText(error)).not.toThrow();
 });
