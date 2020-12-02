@@ -5,11 +5,13 @@ import MissionsList from './MissionsList';
 const missionsFixture = [
   {
     mission_name: "mission one",
-    mission_id: "mission_one"
+    mission_id: "mission_one",
+    description: "description of mission one"
   },
   {
     mission_name: "mission two",
-    mission_id: "mission_two"
+    mission_id: "mission_two",
+    description: "description of mission two"
   }
 ];
 
@@ -34,3 +36,8 @@ test("MissionsList shows data when rerendered with new submission data", () => {
   expect(() => getByText(error)).not.toThrow();
   expect(queryAllByTestId("mission")).toHaveLength(0);
 });
+
+test("MissionsList renders with description", () => {
+  const { getByText } = render(<MissionsList missions={[missionsFixture]} error="" />);
+
+})
