@@ -40,4 +40,5 @@ test("MissionsList shows data when rerendered with new submission data", () => {
 test("MissionsList renders with description", () => {
   const { getByText } = render(<MissionsList missions={[missionsFixture]} error="" />);
 
+  expect(getByText("description of mission one")).not.toThrow();
 })
