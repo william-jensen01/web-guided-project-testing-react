@@ -7,8 +7,10 @@ test("MissionsList render", () => {
 });
 
 test("MissionsList shows data when rerendered with new submission data", () => {
-  const { queryAllByTestId } = render(<MissionsList missions={[]} error="" />);
+  const { queryAllByTestId, rerender } = render(<MissionsList missions={[]} error="" />);
 
   expect(queryAllByTestId("mission")).toStrictEqual([]);
   expect(queryAllByTestId("mission")).toHaveLength(0);
+
+  rerender(<MissionsList error="" missions={[]} />);
 });
