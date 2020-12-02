@@ -3,5 +3,5 @@ import { render } from '@testing-library/react';
 import MissionsList from './MissionsList';
 
 test("MissionsList render", () => {
-  render(<MissionsList />);
+  render(<MissionsList missions={[]} error="" />);
 });
