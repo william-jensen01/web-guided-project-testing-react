@@ -20,5 +20,5 @@ test("App fetches and renders missions data", () => {
   const button = getByText(/get data/i);
   fireEvent.click(button);
 
-
+  getByText(/we are fetching dara/i);
 })
