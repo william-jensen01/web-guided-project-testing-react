@@ -32,4 +32,5 @@ test("MissionsList shows data when rerendered with new submission data", () => {
   rerender(<MissionsList error={error} />);
 
   expect(() => getByText(error)).not.toThrow();
+  expect(queryAllByTestId("mission")).toHaveLength(0);
 });
