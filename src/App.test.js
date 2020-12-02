@@ -14,7 +14,7 @@ test("App renders", () => {
 
 test("App fetches and renders missions data", async () => {
   // tell the test system what we want the mission data to return
-  mockFetchMissions.mockResolvedValueOnce(missionsFixture);
+  mockFetchMissions.mockResolvedValueOnce({ data: missionsFixture });
 
   const { getByText, queryallByTestId } = render(<App />);
   const button = getByText(/get data/i);
