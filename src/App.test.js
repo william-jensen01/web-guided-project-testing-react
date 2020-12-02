@@ -16,12 +16,12 @@ test("App fetches and renders missions data", async () => {
   // tell the test system what we want the mission data to return
   mockFetchMissions.mockResolvedValueOnce({ data: missionsFixture });
 
-  const { getByText, queryallByTestId } = render(<App />);
+  const { getByText, queryAllByTestId } = render(<App />);
   const button = getByText(/get data/i);
   fireEvent.click(button);
 
   getByText(/we are fetching data/i);
   await wait()
 
-  expect(queryAllByTestId("mission")).toHaveLength(0);
+  expect(queryAllByTestId("mission")).toHaveLength(2);
 })
