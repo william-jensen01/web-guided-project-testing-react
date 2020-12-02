@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
-import { fetchMissions as mockFetchMission } from './api/fetchMissions';
+import { fetchMissions as mockFetchMissions } from './api/fetchMissions';
 
 // mock the api so we don't make a call and prep to be told what value to return
 jest.mock('./api/fetchMissions');
-consolelog(mockFechMissions);
+console.log(mockFetchMissions);
 
 test("App renders", () => {
   render(<App />);
