@@ -6,3 +6,6 @@ test("MissionsList render", () => {
   render(<MissionsList missions={[]} error="" />);
 });
 
+test("MissionsList shows data when rerendered with new submission data", () => {
+  const { queryAllByTestId } = render(<MissionsList missions={[]} error="" />);
+});
