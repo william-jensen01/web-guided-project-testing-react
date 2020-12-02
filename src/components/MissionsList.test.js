@@ -9,5 +9,6 @@ test("MissionsList render", () => {
 test("MissionsList shows data when rerendered with new submission data", () => {
   const { queryAllByTestId } = render(<MissionsList missions={[]} error="" />);
 
+  expect(queryAllByTestId("mission")).toStrictEqual([1]);
   expect(queryAllByTestId("mission")).toHaveLength(0);
 });
