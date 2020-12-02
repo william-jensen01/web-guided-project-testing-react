@@ -6,6 +6,10 @@ const missionsFixture = [
   {
     mission_name: "mission one",
     mission_id: "mission_one"
+  },
+  {
+    mission_name: "mission two",
+    mission_id: "mission_two"
   }
 ];
 
@@ -20,4 +24,6 @@ test("MissionsList shows data when rerendered with new submission data", () => {
   expect(queryAllByTestId("mission")).toHaveLength(0);
 
   rerender(<MissionsList error="" missions={missionsFixture} />);
+
+  expect(queryAllByTestId("mission")).toHaveLength(2);
 });
