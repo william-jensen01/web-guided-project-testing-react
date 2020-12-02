@@ -7,7 +7,7 @@ jest.mock("./api/fetchMissions");
 console.log(mockFetchMissions);
 
 test("App fetches missions data and render data", () => {
-  mockFetchMissions.mockResolvedValueOnce({ data: [] });
+  mockFetchMissions.mockResolvedValueOnce({ data: [{ mission_id: "one", mission_name: "one name" }] });
 
   render(<App />)
 })
