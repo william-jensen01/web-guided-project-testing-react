@@ -18,7 +18,7 @@ test("MissionsList render", () => {
 });
 
 test("MissionsList shows data when rerendered with new submission data", () => {
-  const { queryAllByTestId, rerender } = render(<MissionsList missions={[]} error="" />);
+  const { queryAllByTestId, rerender, getByText } = render(<MissionsList missions={[]} error="" />);
 
   expect(queryAllByTestId("mission")).toStrictEqual([]);
   expect(queryAllByTestId("mission")).toHaveLength(0);
@@ -30,4 +30,6 @@ test("MissionsList shows data when rerendered with new submission data", () => {
 
   const error = "my dumb error";
   rerender(<MissionsList error={error} />);
+
+  expect(getByText(/error/i)).toBeDefined();
 });
