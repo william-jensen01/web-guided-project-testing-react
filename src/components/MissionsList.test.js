@@ -19,5 +19,5 @@ test("MissionsList shows data when rerendered with new submission data", () => {
   expect(queryAllByTestId("mission")).toStrictEqual([]);
   expect(queryAllByTestId("mission")).toHaveLength(0);
 
-  rerender(<MissionsList error="" missions={[???]} />);
+  rerender(<MissionsList error="" missions={missionsFixture} />);
 });
