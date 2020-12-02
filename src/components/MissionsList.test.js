@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import MissionsList from './MissionsList';
 
-const missionsFixture = [
+export const missionsFixture = [
   {
     mission_name: "mission one",
     mission_id: "mission_one",
