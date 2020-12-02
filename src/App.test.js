@@ -14,7 +14,7 @@ test("App renders", () => {
 
 test("App fetches and renders missions data", () => {
   // tell the test system what we want the mission data to return
-  mockFetchMissions.mockResolvedValueOnce()
+  mockFetchMissions.mockResolvedValueOnce(missionsFixture);
 
   render(<App />);
 })
